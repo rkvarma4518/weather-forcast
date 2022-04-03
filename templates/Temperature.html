@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+        box-sizing: border-box;
+        font-family: arial;
+        /* font-size: 24px; */
+    }
+
+    .main {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(to right, #eff0f1 10%, #99c9c7);
+    }
+
+    .sub {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .icon {
+        width: 150px;
+        height: 150px;
+        border: 2px solid skyblue;
+        border-radius: 50%;
+    }
+
+    .weather-temp {
+        font-size: 22px;
+        padding: 0px 100px 0px 0px;
+    }
+
+    .weather-temp-num1 {
+        width: 250px;
+        align-items: center;
+        font-size: 32px;
+        padding: 0px 100px 0px 0px;
+    }
+
+    .air {
+        height: 170px;
+    }
+
+    .pm {
+        width: 150px;
+        display: flex;
+        flex-direction: row;
+        margin-right: 50px;
+    }
+
+
+    @media only screen and (max-width : 975px) {
+        .sub {
+            width: 80%;
+            height: 80%;
+        }
+    }
+
+    @media only screen and (max-width : 375px) {
+        .sub {
+            width: 80%;
+            height: 80%;
+
+        }
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="sub">
+            <div class="temp">
+                <img class="icon" src="{{url_for('static',filename='icon-weather.jpg')}}" alt="Loading...">
+                <label class="weather-temp" for="temp">Temperature </label>
+                <p class="weather-temp-num1">{{variable1}}{{variable2}}</p>
+            </div>
+            <div class="temp">
+                <label class="weather-temp" for="temp">Description </label>
+                <p class="weather-temp-num1">{{variable4}}</p>
+                <br>
+                <label class="weather-temp" for="temp">Humidity</label>
+                <p class="weather-temp-num1">{{variable3}}</p>
+                <br>
+                <label class="weather-temp" for="temp">Preciption</label>
+                <p class="weather-temp-num1">{{variable5}}</p>
+                <br>
+                <label class="weather-temp" for="temp">Wind</label>
+                <p class="weather-temp-num1">{{variable6}}</p>
+            </div>
+        </div>
+        <div class="air">
+            <h1>Today</h1>
+            <p class="weather-temp">Air Quality Index</p>
+            <br>
+            <p class="weather-temp-num1">{{variable7}} {{variable8}}</p>
+            <br>
+            <div class="pm">
+                <p class="weather-temp">{{variable9}}</p>
+                <p class="weather-temp">{{variable10}}</p>
+                <p class="weather-temp-num1">{{variable12}}</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
