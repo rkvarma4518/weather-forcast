@@ -1,0 +1,5 @@
+flask
+gunicorn
+requests_html
+requests
+render_template
